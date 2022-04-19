@@ -1,0 +1,38 @@
+.detailContainer {
+  margin-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  max-width: 1000px;
+}
+.heading {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.location {
+  display: flex;
+}
+.imageContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.descriptionHeading {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.descriptionText {
+  text-align: justify;
+  font-size: 17px;
+}
+.cardBtn {
+  margin-top: 20px;
+  background-color: #ff4081;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}

@@ -1,0 +1,27 @@
+<div class="hotelsContainer">
+  <h1 class="heading">Discover Airstay Experiences</h1>
+  <div class="cardContainer">
+    <mat-card class="card" *ngFor="let hotel of hotels">
+      <img
+        src={{hotel.image}}
+        alt="cardImage"
+        class="cardImage"
+      />
+      <mat-card-title class="cardHeading">{{hotel.hotelName}}</mat-card-title>
+      <mat-card-content class="cardContent">
+        <mat-icon>currency_rupee</mat-icon>
+        <p style="font-size: 22px">{{hotel.price}} / night</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-flat-button
+          class="cardBtn"
+          style="color: white"
+          (click)="goToDetailPage(hotel.id)"
+        >
+          View Details
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

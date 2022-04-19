@@ -1,0 +1,37 @@
+<mat-toolbar color="primary" class="navBar">
+  <a routerLink="/" class="logoLink">
+    <div class="appLogo">
+      <div style="padding-right: 10px">
+        <mat-icon class="logogIcon"> luggage </mat-icon>
+      </div>
+      <p
+        style="
+          margin-left: 3px;
+          padding-top: 5px;
+          text-decoration: none;
+          letter-spacing: 1.5px;
+        "
+      >
+        AirStay
+      </p>
+    </div>
+  </a>
+  <div>
+    <button
+      mat-stroked-button
+      class="button1"
+      style="border-color: #ff4081"
+      (click)="goToSignUpPage()"
+    >
+      Sign Up
+    </button>
+    <button
+      mat-flat-button
+      class="button2"
+      style="border-color: white; margin-left: 5px"
+      (click)="goToLoginPage()"
+    >
+      Log In
+    </button>
+  </div>
+</mat-toolbar>

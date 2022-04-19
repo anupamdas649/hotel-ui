@@ -1,0 +1,104 @@
+<h2 mat-dialog-title>Book Now</h2>
+<mat-dialog-content class="mat-typography" style="width: 500px">
+  <form [formGroup]="bookingForm" class="form-container" style="width: 100%">
+    <div style="display: flex; justify-content: space-between">
+      <mat-form-field class="full-width" style="width: 50%">
+        <input formControlName="FullName" matInput placeholder="Full name" />
+        <mat-hint
+          style="color: red"
+          *ngIf="
+          bookingForm.get('FullName')?.touched &&
+          bookingForm.get('FullName')?.errors?.['required']
+        "
+          >Full Name is required</mat-hint
+        >
+        <mat-hint
+          style="color: red"
+          *ngIf="
+          bookingForm.get('FullName')?.touched &&
+          bookingForm.get('FullName')?.errors?.['pattern']
+        "
+          >Invalid Full Name</mat-hint
+        >
+      </mat-form-field>
+      <mat-form-field class="full-width" style="width: 50%; margin-left: 5px">
+        <input formControlName="Phone" matInput placeholder="Phone" />
+        <mat-hint
+          style="color: red"
+          *ngIf="
+          bookingForm.get('Phone')?.touched &&
+          bookingForm.get('Phone')?.errors?.['required']
+        "
+          >Phone is required</mat-hint
+        >
+        <mat-hint
+          style="color: red"
+          *ngIf="
+          bookingForm.get('Phone')?.touched &&
+          bookingForm.get('Phone')?.errors?.['pattern']
+        "
+          >Invalid Phone Number</mat-hint
+        >
+      </mat-form-field>
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <mat-form-field class="full-width" appearance="fill" style="width: 50%">
+        <mat-label>Select Check In Date</mat-label>
+        <input
+          formControlName="CheckInDate"
+          matInput
+          [matDatepicker]="picker1"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-hint
+          style="color: red"
+          *ngIf="
+          bookingForm.get('CheckInDate')?.touched &&
+          bookingForm.get('CheckInDate')?.errors?.['required']
+        "
+          >Check in date is required</mat-hint
+        >
+      </mat-form-field>
+      <mat-form-field
+        class="full-width"
+        appearance="fill"
+        style="width: 50%; margin-left: 5px"
+      >
+        <mat-label>Select Check Out Date</mat-label>
+        <input
+          formControlName="CheckOutDate"
+          matInput
+          [matDatepicker]="picker"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-hint
+          style="color: red"
+          *ngIf="
+          bookingForm.get('CheckOutDate')?.touched &&
+          bookingForm.get('CheckOutDate')?.errors?.['required']
+        "
+          >Check out is required</mat-hint
+        >
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close >Cancel</button>
+  <mat-card-actions>
+    <button
+      (click)="saveForm()"
+      [matDialogClose]="true"
+      mat-raised-button
+      color="primary"
+      disabled="{{ bookingForm.invalid }}"
+    >
+      Confirm
+    </button>
+  </mat-card-actions>
+</mat-dialog-actions>

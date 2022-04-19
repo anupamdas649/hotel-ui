@@ -1,0 +1,51 @@
+<div class="detailContainer">
+  <h1 class="heading">{{hotel.hotelName}}</h1>
+  <div class="location">
+    <div>
+      <mat-icon>location_on</mat-icon>
+    </div>
+    <div>
+      <p style="font-size: 18px; padding-top: 3px">{{hotel.location}}</p>
+    </div>
+  </div>
+  <div class="imageContainer">
+    <img
+      src="./../../assets/home-cover1.jpg"
+      alt="image"
+      style="object-fit: cover; border-radius: 5px"
+      height="200"
+      width="300"
+    />
+    <img
+      src="./../../assets/home-cover2.jpg"
+      alt="image"
+      style="object-fit: cover; border-radius: 5px"
+      height="200"
+      width="300"
+    />
+    <img
+      src="./../../assets/home-cover3.jpg"
+      alt="image"
+      style="object-fit: cover; border-radius: 5px"
+      height="200"
+      width="300"
+    />
+  </div>
+  <div class="descriptionContainer">
+    <h3 class="descriptionHeading">Details</h3>
+    <p class="descriptionText">
+      {{hotel.description}}
+    </p>
+  </div>
+  <div
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <button mat-raised-button class="cardBtn" (click)="openDialog()">
+      Reserve Now!
+    </button>
+    <div style="display: flex">
+      <mat-icon>currency_rupee</mat-icon>
+      <p style="font-size: 22px"><b> {{hotel.price}} </b> / night</p>
+    </div>
+  </div>
+</div>

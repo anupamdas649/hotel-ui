@@ -1,0 +1,70 @@
+<div
+  style="
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div style="width: 400px">
+    <mat-card style="padding: 50px 30px">
+      <h1 style="font-weight: 500; margin-bottom: 30px">Log In</h1>
+      <form [formGroup]="logInForm" class="form-container" style="width: 100%">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+          "
+        >
+          <mat-form-field class="full-width">
+            <input formControlName="Phone" matInput placeholder="Phone" />
+            <mat-hint
+              style="color: red"
+              *ngIf="
+          logInForm.get('Phone')?.touched &&
+          logInForm.get('Phone')?.errors?.['required']
+        "
+              >Phone is required</mat-hint
+            >
+            <mat-hint
+              style="color: red"
+              *ngIf="
+          logInForm.get('Phone')?.touched &&
+          logInForm.get('Phone')?.errors?.['pattern']
+        "
+              >Invalid Phone Number</mat-hint
+            >
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input
+              matInput
+              formControlName="Password"
+              [type]="hide ? 'password' : 'text'"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </form>
+      <button
+        mat-flat-button
+        color="primary"
+        style="margin-top: 10px"
+        disabled="{{ logInForm.invalid }}"
+        (click)="saveForm()"
+      >
+        Log In
+      </button>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.appLogo {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #ff4081;
+}
+
+.button1 {
+  color: #ff4081;
+  border-color: #ff4081;
+}
+
+.button2 {
+  /* color: #ff4081; */
+  color: white;
+  background-color: #ff4081;
+}
+
+.logogIcon {
+  font-size: 35px;
+}
+
+.logoLink {
+  text-decoration: none;
+}
+.logoLink:hover {
+  text-decoration: none;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
